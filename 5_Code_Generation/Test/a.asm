@@ -1,0 +1,284 @@
+	      INT 0, 292
+	      SUP 0, main
+	      RET 0, 0
+strcmp:
+	      INT 0, 20
+L2:
+	      LOD 1, 12
+	     LDIB 0, 0
+	      LOD 1, 16
+	     LDIB 0, 0
+	     EQLI 0, 0
+	      JPC 0, L3
+	      LOD 1, 12
+	     LDIB 0, 0
+	     LITI 0, 0
+	     EQLI 0, 0
+	      JPC 0, L4
+	      LDA 1, -4
+	     LITI 0, 0
+	      STO 0, 0
+	      RET 0, 0
+L4:
+	      LOD 1, 16
+	      LDA 1, 16
+	      LDX 0, 0
+	     LITI 0, 1
+	     ADDI 0, 0
+	      STO 0, 0
+	      POP 0, 1
+L1:
+	      LOD 1, 12
+	      LDA 1, 12
+	      LDX 0, 0
+	     LITI 0, 1
+	     ADDI 0, 0
+	      STO 0, 0
+	      POP 0, 1
+	      JMP 0, L2
+L3:
+	      LDA 1, -4
+	      LOD 1, 12
+	     LDIB 0, 0
+	      LOD 1, 16
+	     LDIB 0, 0
+	     SUBI 0, 0
+	      STO 0, 0
+	      RET 0, 0
+	      RET 0, 0
+search:
+	      INT 0, 40
+	      LDA 1, 28
+	     LITI 0, 0
+	      STX 0, 0
+	      POP 0, 1
+	      LDA 1, 32
+	      LOD 1, 20
+	     LITI 0, 1
+	     SUBI 0, 0
+	      STX 0, 0
+	      POP 0, 1
+L6:
+	      LOD 1, 28
+	      LOD 1, 32
+	     LEQI 0, 0
+	      JPC 0, L7
+	      LDA 1, 36
+	      LOD 1, 28
+	      LOD 1, 32
+	     ADDI 0, 0
+	     LITI 0, 2
+	     DIVI 0, 0
+	      STX 0, 0
+	      POP 0, 1
+	      LDA 1, 24
+	      INT 0, 16
+	      LOD 1, 12
+	      POP 0, 5
+	     ADDR 0, strcmp
+	      CAL 0, 0
+	      STX 0, 0
+	     LITI 0, 0
+	     LSSI 0, 0
+	      JPC 0, L8
+	      LDA 1, 32
+	      LOD 1, 36
+	     LITI 0, 1
+	     SUBI 0, 0
+	      STX 0, 0
+	      POP 0, 1
+	      JMP 0, L9
+L8:
+	      LOD 1, 24
+	     LITI 0, 0
+	     GTRI 0, 0
+	      JPC 0, L10
+	      LDA 1, 28
+	      LOD 1, 36
+	     LITI 0, 1
+	     ADDI 0, 0
+	      STX 0, 0
+	      POP 0, 1
+	      JMP 0, L11
+L10:
+	      LDA 1, -4
+	      LOD 1, 36
+	      STO 0, 0
+	      RET 0, 0
+L11:
+L9:
+L5:
+	      JMP 0, L6
+L7:
+	      LDA 1, -4
+	     LITI 0, 1
+	   MINUSI 0, 0
+	      STO 0, 0
+	      RET 0, 0
+	      RET 0, 0
+main:
+	      INT 0, 32
+	      LDA 0, 12
+	     LITI 0, 0
+	     LITI 0, 8
+	     MULI 0, 0
+	   OFFSET 0, 0
+	      LDA 0, 172
+	      STX 0, 0
+	      POP 0, 1
+	      LDA 0, 12
+	     LITI 0, 1
+	     LITI 0, 8
+	     MULI 0, 0
+	   OFFSET 0, 0
+	      LDA 0, 180
+	      STX 0, 0
+	      POP 0, 1
+	      LDA 0, 12
+	     LITI 0, 2
+	     LITI 0, 8
+	     MULI 0, 0
+	   OFFSET 0, 0
+	      LDA 0, 188
+	      STX 0, 0
+	      POP 0, 1
+	      LDA 0, 12
+	     LITI 0, 3
+	     LITI 0, 8
+	     MULI 0, 0
+	   OFFSET 0, 0
+	      LDA 0, 196
+	      STX 0, 0
+	      POP 0, 1
+	      LDA 0, 12
+	     LITI 0, 4
+	     LITI 0, 8
+	     MULI 0, 0
+	   OFFSET 0, 0
+	      LDA 0, 204
+	      STX 0, 0
+	      POP 0, 1
+	      LDA 1, 12
+	     LITI 0, 0
+	      STX 0, 0
+	      POP 0, 1
+L13:
+	      LOD 1, 12
+	     LITI 0, 5
+	     LSSI 0, 0
+	      JPC 0, L14
+	      LDA 0, 12
+	      LOD 1, 12
+	     LITI 0, 8
+	     MULI 0, 0
+	   OFFSET 0, 0
+	     LITI 0, 4
+	   OFFSET 0, 0
+	     LITI 0, 0
+	      STX 0, 0
+	      POP 0, 1
+	      INT 0, 12
+	      LDA 0, 212
+	      POP 0, 6
+	     ADDR 0, printf
+	      CAL 0, 0
+L12:
+	      LOD 1, 12
+	      LDA 1, 12
+	      LDX 0, 0
+	     INCI 0, 0
+	      STO 0, 0
+	      POP 0, 1
+	      JMP 0, L13
+L14:
+L16:
+	     LITI 0, 1
+	      JPC 0, L17
+	      INT 0, 12
+	      LDA 0, 224
+	      POP 0, 4
+	     ADDR 0, printf
+	      CAL 0, 0
+	      INT 0, 12
+	      LDA 0, 236
+	      LDA 1, 20
+	      POP 0, 7
+	     ADDR 0, scanf
+	      CAL 0, 0
+	      INT 0, 12
+	      LDA 0, 244
+	      LDA 1, 20
+	      POP 0, 7
+	     ADDR 0, printf
+	      CAL 0, 0
+	      LDA 1, 12
+	      INT 0, 16
+	      LDA 1, 20
+	      LDA 0, 12
+	     LITI 0, 5
+	      POP 0, 6
+	     ADDR 0, search
+	      CAL 0, 0
+	      STX 0, 0
+	      POP 0, 1
+	      LOD 1, 12
+	     LITI 0, 0
+	     GEQI 0, 0
+	      JPC 0, L18
+	      LDA 0, 12
+	      LOD 1, 12
+	     LITI 0, 8
+	     MULI 0, 0
+	   OFFSET 0, 0
+	     LITI 0, 4
+	   OFFSET 0, 0
+	      LDX 0, 0
+	     INCI 0, 0
+	      STO 0, 0
+	      POP 0, 1
+L18:
+	      INT 0, 12
+	      LDA 0, 260
+	      LDA 1, 20
+	      LOD 1, 12
+	      POP 0, 8
+	     ADDR 0, printf
+	      CAL 0, 0
+	      LDA 1, 12
+	     LITI 0, 0
+	      STX 0, 0
+	      POP 0, 1
+L20:
+	      LOD 1, 12
+	     LITI 0, 5
+	     LSSI 0, 0
+	      JPC 0, L21
+	      INT 0, 12
+	      LDA 0, 280
+	      POP 0, 6
+	     ADDR 0, printf
+	      CAL 0, 0
+L19:
+	      LOD 1, 12
+	      LDA 1, 12
+	      LDX 0, 0
+	     INCI 0, 0
+	      STO 0, 0
+	      POP 0, 1
+	      JMP 0, L20
+L21:
+L15:
+	      JMP 0, L16
+L17:
+	      RET 0, 0
+.literal   172 "chang"
+.literal   180 "kim"
+.literal   188 "lee"
+.literal   196 "park"
+.literal   204 "yoo"
+.literal   212 "%s,%d\n"
+.literal   224 "enter:"
+.literal   236 "%s"
+.literal   244 "search = %s\n"
+.literal   260 "%s found at %d\n"
+.literal   280 "%s,%d\n"

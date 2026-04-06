@@ -2,6 +2,7 @@
 **From Scratch C 컴파일러 프론트엔드 & 가상 머신**
 Lexical, Syntax, Semantic Analysis 전 과정을 직접 구현했습니다.  
 소스 코드가 해석되어 실제 실행되는 컴파일러 전단부의 흐름을 깊게 이해하는 것이 목표입니다.
+<img width="486" height="764" alt="image" src="https://github.com/user-attachments/assets/6aefcc35-f956-45b3-ac29-04ab25d1024f" />
 
 ## 🏗 아키텍처 (Architecture)
 ```mermaid
